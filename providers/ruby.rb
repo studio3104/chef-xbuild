@@ -16,7 +16,7 @@ action :install do
   bash "Install pry and bundler" do
     action :nothing
     code <<-EOH
-    #{new_resource.prefix}/bin/gem install --no-rdoc --no-ri bundler pry > /tmp/ruby-install-bundler.log
+    #{new_resource.prefix}/bin/gem install --no-rdoc --no-ri bundler pry
     EOH
   end
 end
