@@ -1,9 +1,7 @@
-=begin
 xbuild_perl 'install test perl 5.16.3' do
   version '5.16.3'
   prefix '/usr/local/bin/perl-5.16.3'
 end
-=end
 
 xbuild_ruby 'install test ruby 1.9.3-p392' do
   version '1.9.3-p392'
@@ -21,7 +19,6 @@ xbuild_node 'install test node v0.10.1' do
   prefix '/usr/local/bin/node-0.10.1'
 end
 
-=begin
 %w{
   Acme::AjiFry
   Acme::PrettyCure
@@ -32,7 +29,6 @@ end
     perl_root '/usr/local/bin/perl-5.16.3'
   end
 end
-=end
 
 %w{
   fluentd
