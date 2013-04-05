@@ -1,7 +1,3 @@
-require 'chef/mixin/shell_out'
-require 'chef/mixin/language'
-include Chef::Mixin::ShellOut
-
 action :install do
   archive_dir  = "node-#{new_resource.version}-#{new_resource.arch}"
   archive_file = "#{archive_dir}.tar.gz"
@@ -19,4 +15,8 @@ action :install do
     EOH
     not_if { ::File.exists?("#{new_resource.prefix}/bin/node") }
   end
+end
+
+def whyrun_supported?
+  true
 end
