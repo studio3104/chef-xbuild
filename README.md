@@ -16,7 +16,7 @@ Chef cookbook for [xbuild](https://github.com/tagomoris/xbuild)
 
   * RedHat, CentOS
 
-### Not support (Have not tried)
+### Not supports (Have not tried)
 
   * Debian, Ubuntu
   * Fedora, Amazon, Scientific
