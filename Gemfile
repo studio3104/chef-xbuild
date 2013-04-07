@@ -1,4 +1,4 @@
 source :rubygems
 
-gem 'berkshelf'
-gem 'vagrant'
+gem "vagrant",   "~> 1.0.7"
+gem "berkshelf", "~> 1.2.1"
