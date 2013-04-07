@@ -14,6 +14,11 @@ xbuild_php 'install test php 5.5snapshot' do
   prefix '/usr/local/bin/php-5.5snapshot'
 end
 
+xbuild_python 'install test python 2.7.3' do
+  version '2.7.3'
+  prefix '/usr/local/bin/python-2.7.3'
+end
+
 xbuild_node 'install test node v0.10.1' do
   version 'v0.10.1'
   prefix '/usr/local/bin/node-0.10.1'
@@ -31,6 +36,7 @@ end
 end
 
 %w{
+  ec2ssh
   fluentd
   serverspec
   vagrant

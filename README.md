@@ -57,6 +57,12 @@ end
   * [build-essential](http://community.opscode.com/cookbooks/build-essential)
   * [git](http://community.opscode.com/cookbooks/git)
 
+# 
+
 # Author
 
 Satoshi SUZUKI (<studio3104.com@gmail.com>)
+
+# License
+
+Apache License, Version 2.0 (see LICENSE)

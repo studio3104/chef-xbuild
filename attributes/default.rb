@@ -11,6 +11,7 @@ when 'redhat', 'centos'
     libxml2-devel
     libcurl-devel
     libjpeg-devel
+    libpng-devel
     libmcrypt-devel
     libtidy-devel
     libxslt-devel
@@ -36,6 +37,6 @@ end
 default['perl_build']['bin'] = "#{default['xbuild']['path']}/bin/perl-build"
 default['perl_build']['fatpack_cpanm'] = "#{default['xbuild']['path']}/bin/fatpack_cpanm"
 
-default['ruby_build']['bin'] = "#{default['xbuild']['path']}/bin/ruby-build"
-
-default['php_build']['bin'] = "#{default['xbuild']['path']}/bin/php-build"
+default['ruby_build']['bin']   = "#{default['xbuild']['path']}/bin/ruby-build"
+default['php_build']['bin']    = "#{default['xbuild']['path']}/bin/php-build"
+default['python_build']['bin'] = "#{default['xbuild']['path']}/bin/python-build"

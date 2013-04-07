@@ -38,6 +38,21 @@ bash 'install php-build' do
   not_if { ::File.exists?(node['php_build']['bin']) }
 end
 
+git "#{Chef::Config[:file_cache_path]}/pyenv-repo" do
+  repository 'git://github.com/yyuu/pyenv.git'
+  reference 'master'
+  action :checkout
+  not_if { ::File.exists?(node['python_build']['bin']) }
+end
+bash 'install python-build' do
+  cwd "#{Chef::Config[:file_cache_path]}/pyenv-repo/plugins/python-build"
+  environment('PREFIX' => node['xbuild']['path'])
+  code <<-EOH
+    ./install.sh
+  EOH
+  not_if { ::File.exists?(node['python_build']['bin']) }
+end
+
 remote_file node['perl_build']['bin'] do
   source 'https://raw.github.com/tokuhirom/Perl-Build/master/perl-build'
   mode '0755'
