@@ -4,9 +4,33 @@ Chef cookbook for [xbuild](https://github.com/tagomoris/xbuild)
 
 # Requirements
 
-## Usage
+## Recipes
 
-### Expample
+  * [build-essential](http://community.opscode.com/cookbooks/build-essential)
+  * [git](http://community.opscode.com/cookbooks/git)
+
+## Platforms
+
+### Supports
+
+  * Debian, Ubuntu (Need more more more tests)
+  * RedHat, CentOS
+
+### Not support (Not pass tests)
+
+  * Fedora, Amazon, Scientific
+
+# Usage
+
+```
+include_recipe 'xbuild'
+```
+
+## Attributes
+
+## Recipes
+
+
 ```
 xbuild_perl 'install test perl 5.16.3' do
   version '5.16.3'
@@ -51,11 +75,6 @@ end
   end
 end
 ```
-
-## Recipes
-
-  * [build-essential](http://community.opscode.com/cookbooks/build-essential)
-  * [git](http://community.opscode.com/cookbooks/git)
 
 # 
 

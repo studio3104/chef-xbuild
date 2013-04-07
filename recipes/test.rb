@@ -1,48 +1,45 @@
-xbuild_perl 'install test perl 5.16.3' do
-  version '5.16.3'
-  prefix '/usr/local/bin/perl-5.16.3'
+xbuild_perl "install test perl #{node['perl']['version']}" do
+  version node['perl']['version']
+  prefix  node['perl']['prefix']
 end
 
-xbuild_ruby 'install test ruby 1.9.3-p392' do
-  version '1.9.3-p392'
-  prefix '/usr/local/bin/ruby-1.9.3'
+xbuild_ruby "install test ruby #{node['ruby']['version']}" do
+  version node['ruby']['version']
+  prefix  node['ruby']['prefix']
 end
 
-xbuild_php 'install test php 5.5snapshot' do
-  version '5.5snapshot'
-  options '--with-pear'
-  prefix '/usr/local/bin/php-5.5snapshot'
+xbuild_php "install test php #{node['php']['version']}" do
+  version node['php']['version']
+  options node['php']['options']
+  prefix  node['php']['prefix']
 end
 
-xbuild_python 'install test python 2.7.3' do
-  version '2.7.3'
-  prefix '/usr/local/bin/python-2.7.3'
+xbuild_python "install test python #{node['python']['version']}" do
+  version node['python']['version']
+  prefix  node['python']['prefix']
 end
 
-xbuild_node 'install test node v0.10.1' do
-  version 'v0.10.1'
-  prefix '/usr/local/bin/node-0.10.1'
+xbuild_node "install test node #{node['node']['version']}" do
+  version node['node']['version']
+  prefix  node['node']['prefix']
 end
 
 %w{
   Acme::AjiFry
-  Acme::PrettyCure
   Proclet
 }.each do |module_name|
   xbuild_cpanm module_name do
     options '--force --verbose'
-    perl_root '/usr/local/bin/perl-5.16.3'
+    perl_root node['perl']['prefix']
   end
 end
 
 %w{
   ec2ssh
-  fluentd
   serverspec
-  vagrant
 }.each do |module_name|
   xbuild_gem module_name do
     options '--no-rdoc --no-ri'
-    ruby_root '/usr/local/bin/ruby-1.9.3'
+    ruby_root node['ruby']['prefix']
   end
 end
