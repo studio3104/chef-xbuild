@@ -1,0 +1,25 @@
+platform :centos do
+  version '6.3' do
+    box "opscode-centos-6.3"
+    box_url "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box"
+  end
+end
+
+platform :ubuntu do
+  version '12.04' do
+    box "opscode-ubuntu-12.04"
+    box_url "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box"
+  end
+end
+
+cookbook "xbuild" do
+  ## skip foodcritic
+  memory 1024
+  lint false
+
+  run_list_extras ['xbuild_attributes::default']
+
+  ## run_list
+  # configuration "default"
+  configuration "test"
+end

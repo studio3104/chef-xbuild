@@ -1,3 +1,5 @@
+include_recipe 'xbuild::default'
+
 xbuild_perl "install test perl #{node['perl']['version']}" do
   version node['perl']['version']
   prefix  node['perl']['prefix']
@@ -12,7 +14,7 @@ xbuild_php "install test php #{node['php']['version']}" do
   version node['php']['version']
   options node['php']['options']
   prefix  node['php']['prefix']
-end
+end if node[:platform_family] == 'rhel'
 
 xbuild_python "install test python #{node['python']['version']}" do
   version node['python']['version']
