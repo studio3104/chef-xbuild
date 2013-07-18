@@ -9,7 +9,7 @@ end
 directory node['xbuild']['path']
 
 git "#{Chef::Config[:file_cache_path]}/ruby-build" do
-  repository 'git://github.com/sstephenson/ruby-build.git'
+  repository 'https://github.com/sstephenson/ruby-build.git'
   reference 'master'
   action :checkout
   not_if { ::File.exists?(node['ruby_build']['bin']) }
@@ -24,7 +24,7 @@ bash 'install ruby-build' do
 end
 
 git "#{Chef::Config[:file_cache_path]}/php-build" do
-  repository 'git://github.com/CHH/php-build.git'
+  repository 'https://github.com/CHH/php-build.git'
   reference 'master'
   action :checkout
   not_if { ::File.exists?(node['php_build']['bin']) }
@@ -39,7 +39,7 @@ bash 'install php-build' do
 end
 
 git "#{Chef::Config[:file_cache_path]}/pyenv-repo" do
-  repository 'git://github.com/yyuu/pyenv.git'
+  repository 'https://github.com/yyuu/pyenv.git'
   reference 'master'
   action :checkout
   not_if { ::File.exists?(node['python_build']['bin']) }
