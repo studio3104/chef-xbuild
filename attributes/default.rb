@@ -2,7 +2,7 @@ default['xbuild']['path'] = '/usr/local/bin/xbuild'
 default['xbuild']['include_recipes'] = %w{ git build-essential }
 
 case node[:platform]
-when 'redhat', 'centos'
+when 'redhat', 'centos', 'amazon'
   default['xbuild']['depends'] = %w{
     openssl-devel
     zlib-devel
