@@ -22,7 +22,7 @@ when 'redhat', 'centos', 'amazon'
     yum::repoforge
   })
 when 'ubuntu', 'debian'
-  default['xbuild']['depends'] = %{
+  default['xbuild']['depends'] = %w{
     build-essential
     openssl
     libssl-dev
