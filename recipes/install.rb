@@ -8,14 +8,14 @@ if node['perl'] then
 end
 
 if node['ruby'] then
-  xbuild_ruby "install test ruby #{node['ruby']['version']}" do
+  xbuild_ruby "install ruby #{node['ruby']['version']}" do
     version node['ruby']['version']
     prefix  node['ruby']['prefix']
   end
 end
 
 if node['php'] then
-  xbuild_php "install test php #{node['php']['version']}" do
+  xbuild_php "install php #{node['php']['version']}" do
     version node['php']['version']
     options node['php']['options']
     prefix  node['php']['prefix']
@@ -23,14 +23,14 @@ if node['php'] then
 end
 
 if node['python'] then
-  xbuild_python "install test python #{node['python']['version']}" do
+  xbuild_python "install python #{node['python']['version']}" do
     version node['python']['version']
     prefix  node['python']['prefix']
   end
 end
 
 if node['node'] then
-  xbuild_node "install test node #{node['node']['version']}" do
+  xbuild_node "install node #{node['node']['version']}" do
     version node['node']['version']
     prefix  node['node']['prefix']
   end
