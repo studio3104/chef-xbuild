@@ -5,12 +5,26 @@ if node['perl'] then
     version node['perl']['version']
     prefix  node['perl']['prefix']
   end
+
+  node['perl']['modules'].each do |module_name|
+    xbuild_cpanm module_name do
+      options '--force --verbose'
+      perl_root node['perl']['prefix']
+    end
+  end
 end
 
 if node['ruby'] then
   xbuild_ruby "install ruby #{node['ruby']['version']}" do
     version node['ruby']['version']
     prefix  node['ruby']['prefix']
+  end
+
+  node['ruby']['gems'].each do |gem_name|
+    xbuild_gem gem_name do
+      options '--no-rdoc --no-ri'
+      ruby_root node['ruby']['prefix']
+    end
   end
 end
 
