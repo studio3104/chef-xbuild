@@ -1,29 +1,3 @@
-xbuild_perl "install test perl #{node['perl']['version']}" do
-  version node['perl']['version']
-  prefix  node['perl']['prefix']
-end
-
-xbuild_ruby "install test ruby #{node['ruby']['version']}" do
-  version node['ruby']['version']
-  prefix  node['ruby']['prefix']
-end
-
-xbuild_php "install test php #{node['php']['version']}" do
-  version node['php']['version']
-  options node['php']['options']
-  prefix  node['php']['prefix']
-end
-
-xbuild_python "install test python #{node['python']['version']}" do
-  version node['python']['version']
-  prefix  node['python']['prefix']
-end
-
-xbuild_node "install test node #{node['node']['version']}" do
-  version node['node']['version']
-  prefix  node['node']['prefix']
-end
-
 %w{
   Acme::AjiFry
   Proclet
